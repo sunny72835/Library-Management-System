@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Branch Information";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Branch Information</h2>
+@using (Html.BeginForm("BranchInfo", "Admin", FormMethod.Post, new {target ="_blank" }))
+{
+    <table>
+        <tr>
+            <td>Enter branch ID: </td>
+            <td>@Html.Editor("libId")</td>
+            <td>(Don't enter any thing to get data of all branches)</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnBranchInfo" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+}
+

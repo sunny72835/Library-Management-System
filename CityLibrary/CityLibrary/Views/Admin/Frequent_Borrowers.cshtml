@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Frequent Borrowers";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Frequent Borrowers of Branch</h2>
+@using (Html.BeginForm("FrequentBorrowers", "Admin", FormMethod.Post, new { target = "_blank" }))
+{
+    <table>
+        <tr>
+            <td>Enter library id: </td>
+            <td>@Html.Editor("libId")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnBorrow" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+}
+

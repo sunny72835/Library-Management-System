@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Average Fine";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Average Fine per Reader</h2>
+<table border="1">
+    <tr>
+        <th>Reader id</th>
+        <th>Reader Name</th>
+        <th>Avg. fine paid</th>
+    </tr>
+    @foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["ReaderId"]</td>
+            <td>@row["ReaderName"]</td>
+            <td>@row["Avg Fine"]</td>
+        </tr>
+    }
+</table>
+

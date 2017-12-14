@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Branch_Information";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Branch_Information</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+    </tr>
+    @foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>
+                @row["Name"]
+            </td>
+            <td>
+                @row["Location"]
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Frequent Borrowers";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>List of Top 10 Borrowers</h2>
+<table border="1">
+    <tr>
+        <th>Name of Reader</th>
+        <th>No. of Books borrowed</th>
+    </tr>
+    @foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["ReaderName"]</td>
+            <td>@row["Books_Borrowed"]</td>
+        </tr>
+    }
+</table>
+

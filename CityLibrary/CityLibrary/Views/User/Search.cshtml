@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+@Html.ActionLink("Return to main Menu for user", "Main", "User")
+<h2>Search for Document</h2>
+@using (Html.BeginForm("Search", "User", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>Document ID: </td>
+            <td>@Html.Editor("docId")</td>
+        </tr>
+        <tr>
+            <td>Document Title: </td>
+            <td>@Html.Editor("docTitle")</td>
+        </tr>
+        <tr>
+            <td>Publisher name: </td>
+            <td>@Html.Editor("pubName")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnSearch" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+}
+

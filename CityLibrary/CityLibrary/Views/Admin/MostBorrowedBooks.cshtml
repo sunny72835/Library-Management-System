@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Most Borrowed Books";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Most Borrowed Books per branch</h2>
+@using (Html.BeginForm("MostBorrowedBooks", "Admin", FormMethod.Post, new { target = "_blank" }))
+{
+    <table>
+        <tr>
+            <td>Enter library id: </td>
+            <td>@Html.Editor("libId")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnBorrowBook" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Most_Popular_Books";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>List of top 10 most popular books of the year @ViewBag.year</h2>
+<table border="1">
+    <tr>
+        <th>Name of Book</th>
+        <th>No. of times borrowed</th>
+    </tr>
+    @foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["Title"]</td>
+            <td>@row["Count"]</td>
+        </tr>
+    }
+</table>

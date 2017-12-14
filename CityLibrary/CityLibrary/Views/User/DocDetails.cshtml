@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Document_Details";
+}
+
+<h2>Document details</h2>
+<h6>Use this information to reserve the book:</h6>
+<table border="1">
+    <tr>
+        <th>Document Id</th>
+        <th>Document Title</th>
+        <th>Publisher Name</th>
+        <th>Library Id</th>
+        <th>Branch Name</th>
+        <th>Copy no</th>
+    </tr>
+@{
+    foreach (var row in Model.Rows)
+    {
+        <tr>
+            <td>@row["DocId"]</td>
+            <td>@row["Title"]</td>
+            <td>@row["Pub_name"]</td>
+            <td>@row["LibId"]</td>
+            <td>@row["Name"]</td>
+            <td>@row["copyno"]</td>
+        </tr>
+    }
+}
+</table>

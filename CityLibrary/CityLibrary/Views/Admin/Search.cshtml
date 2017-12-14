@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Find a document</h2>
+@{
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }    
+}
+@using (Html.BeginForm("Search", "Admin", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter Document id: </td>
+            <td>@Html.Editor("docId")</td>
+        </tr>
+        <tr>
+            <td>Enter Library id: </td>
+            <td>@Html.Editor("libId")</td>
+        </tr>
+        <tr>
+            <td>Enter Copy number: </td>
+            <td>@Html.Editor("copyno")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnFind" type="submit" value="Find" /></td>
+        </tr>
+    </table>
+}

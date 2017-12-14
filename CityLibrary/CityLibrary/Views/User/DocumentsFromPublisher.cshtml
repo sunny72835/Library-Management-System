@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Documents From Publisher";
+}
+@Html.ActionLink("Return to main Menu for user", "Main", "User")
+<h2>Documents list from publisher</h2>
+@{
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+@using (Html.BeginForm("DocumentsFromPublisher", "User", FormMethod.Post, new { target = "_blank"}))
+{
+    <table>
+        <tr>
+            <td>Enter publisher's name: </td>
+            <td>@Html.Editor("pubName")</td>
+        </tr>
+        <tr>
+            <td><input id="btnPub" type="submit" value="Get document list" /></td>
+        </tr>
+    </table>
+}
+

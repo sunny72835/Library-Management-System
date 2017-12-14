@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Document Reservation";
+}
+@Html.ActionLink("Return to main Menu for user", "Main", "User")
+<h2>Document Reservation</h2>
+<link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/jquery-3.2.1.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.date-picker').datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+
+@{
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+
+@using (Html.BeginForm("DocumentReserve", "User", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter Document Id: </td>
+            <td>@Html.Editor("docId")</td>
+        </tr>
+        <tr>
+            <td>Enter Copy No: </td>
+            <td>@Html.Editor("copyNo")</td>
+        </tr>
+        <tr>
+            <td>Enter Library Id: </td>
+            <td>@Html.Editor("libId")</td>
+        </tr>
+        <tr>
+            <td>Reservation date: </td>
+            <td>@Html.TextBox("resDate", null, new { @class="date-picker" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="btnReserve" type="submit" value="Reserve" /></td>
+        </tr>        
+    </table>
+}
+@using (Html.BeginForm("DocDetails", "User", FormMethod.Post, new {target = "_blank" }))
+{
+    <table>
+        <tr>
+            <th>Search document details</th>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Enter document title:</td>
+            <td>@Html.Editor("docTitle")</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="btnDoc" type="submit" value="Get Details" /></td>
+        </tr>
+    </table>
+} 
+

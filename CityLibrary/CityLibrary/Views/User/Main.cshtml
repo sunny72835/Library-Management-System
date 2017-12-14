@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "User Main Menu";
+}
+
+<h2>Please choose one action:</h2>
+<ul>
+    <li>@Html.ActionLink("Search","Search","User")</li>
+    <li>@Html.ActionLink("Document checkout", "DocumentCheckout", "User")</li>
+    <li>@Html.ActionLink("Document return", "DocumentReturn", "User")</li>
+    <li>@Html.ActionLink("Document reserve", "DocumentReserve", "User")</li>
+    <li>@Html.ActionLink("Fines Due", "FinesDue", "User")</li>
+    <li>@Html.ActionLink("Reserved Documents", "ReservedDocuments", "User")</li>
+    <li>@Html.ActionLink("Documents from publisher", "DocumentsFromPublisher", "User")</li>
+    <li>@Html.ActionLink("Quit", "Index", "Home")</li>
+</ul>
+

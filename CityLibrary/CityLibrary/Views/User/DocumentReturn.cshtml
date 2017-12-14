@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Document Return";
+}
+@Html.ActionLink("Return to main Menu for user", "Main", "User")
+<h2>Document Return Page</h2>
+@{
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+@using (Html.BeginForm("DocumentReturn","User",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter Document Id: </td>
+            <td>@Html.Editor("docId")</td>
+        </tr>
+        <tr>
+            <td>Enter Copy No: </td>
+            <td>@Html.Editor("copyNo")</td>
+        </tr>
+        <tr>
+            <td>Enter Library Id: </td>
+            <td>@Html.Editor("libId")</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="btnReturn" type="submit" value="Return" /></td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Add Document";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Add a Document</h2>
+@{
+    
+    <link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.date-picker').datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+@using (Html.BeginForm("AddDocument","Admin",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter Document title: </td>
+            <td>@Html.Editor("docTitle")</td>
+        </tr>
+        <tr>
+            <td>Published on: </td>            
+            <td>@Html.TextBox("pdate", "", new { @class = "date-picker" })</td>            
+            @*<td>(format: yyyy-mm-dd)</td>*@
+        </tr>
+        <tr>
+            <td>Enter Publisher Id: </td>
+            <td>@Html.Editor("publisherId")</td>
+        </tr>
+        <tr>
+            <td>Enter Library Id: </td>
+            <td>@Html.Editor("libId")</td>
+        </tr>
+        <tr>
+            <td>Enter Copy no: </td>
+            <td>@Html.Editor("copyno")</td>
+        </tr>
+        <tr>
+            <td>Enter Position</td>
+            <td>@Html.Editor("position")</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input id="btnAddDoc" type="submit" value="Add Document" /></td>
+        </tr>
+    </table>
+}

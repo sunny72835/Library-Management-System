@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Add Reader";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Add a new reader</h2>
+@{
+    if (ViewBag.msg != null)
+    {
+        <script type="text/javascript">
+            alert('@ViewBag.msg');
+        </script>
+    }
+}
+@using (Html.BeginForm("AddReader","Admin",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Enter reader's name: </td>
+            <td>@Html.Editor("readerName")</td>
+        </tr>
+        <tr>
+            <td>Select reader's type: </td>
+            <td>@Html.DropDownList("type",new SelectListItem[]{
+               new SelectListItem(){Text="Student", Value="Student"},
+               new SelectListItem(){Text="Senior citizen", Value="Senior citizen"},
+               new SelectListItem(){Text="Staff", Value="Staff"}
+           }, "--Select--")</td>
+        </tr>
+        <tr>
+            <td>Enter reader's Phone no: </td>
+            <td>@Html.Editor("phoneNo")</td>
+        </tr>
+        <tr>
+            <td>Enter reader's Address: </td>
+            <td>@Html.Editor("address")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnAddReader" type="submit" value="Add" /></td>
+        </tr>
+    </table>
+}
+

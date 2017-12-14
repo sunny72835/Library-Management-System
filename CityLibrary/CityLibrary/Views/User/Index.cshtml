@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "User";
+}
+
+<h2>Please enter your card number</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>Card no:</td>
+            <td>@Html.Editor("cardno")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="submitUser" type="submit" value="submit" /></td>                    
+        </tr>
+    </table>
+    
+}

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "MostPopularbooks";
+}
+
+@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<h2>Find Most Popular books per year</h2>
+@using (Html.BeginForm("MostPopularBooks", "Admin", FormMethod.Post, new { target = "_blank" }))
+{
+    <table>
+        <tr>
+            <td>Enter year: </td>
+            <td>@Html.Editor("year")</td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input id="btnBorrowYear" type="submit" value="submit" /></td>
+        </tr>
+    </table>
+}
+
