@@ -2,8 +2,32 @@
 @{
     ViewBag.Title = "Fine Calculator";
 }
-@Html.ActionLink("Return to main Menu for user", "Main", "User")
-<h2>Fine Calculator</h2>
+<style>
+    body {
+        background: #333;
+    }
+
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 325px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
+
 @{
     if (ViewBag.msg != null)
     {
@@ -14,22 +38,29 @@
 }
 @using (Html.BeginForm("FinesDue","User",FormMethod.Post))
 {
-    <table>
-        <tr>
-            <td>Enter Document Id: </td>
-            <td>@Html.Editor("docId")</td>
-        </tr>
-        <tr>
-            <td>Enter Copy No: </td>
-            <td>@Html.Editor("copyNo")</td>
-        </tr>
-        <tr>
-            <td>Enter Library Id: </td>
-            <td>@Html.Editor("libId")</td>
-        </tr>
-        <tr>
-            <td><input id="btnFine" type="submit" value="Get fine" /></td>
-        </tr>
-    </table>
+    <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Fine Calculator</h2>
+                <br/>                
+                <div class="form-group">
+                    <input type="text" class="form-control" name="docId" id="docId" placeholder="Enter document id">                    
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="copyNo" id="copyNo" placeholder="Enter copy no">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="libId" id="libId" placeholder="Enter branch id">
+                </div>                
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="btnFine">Get Fine</button>
+                    @Html.ActionLink("Back", "Main", "User", new { @class = "btn btn-default" })
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 }
 

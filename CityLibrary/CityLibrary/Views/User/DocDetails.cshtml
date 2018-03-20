@@ -2,10 +2,36 @@
 @{
     ViewBag.Title = "Document_Details";
 }
+<style>
+    body {
+        background: #333;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+</style>
 
 <h2>Document details</h2>
 <h6>Use this information to reserve the book:</h6>
-<table border="1">
+<table>
     <tr>
         <th>Document Id</th>
         <th>Document Title</th>
