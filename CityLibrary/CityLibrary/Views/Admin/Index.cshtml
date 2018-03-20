@@ -3,29 +3,57 @@
     ViewBag.Title = "Admin";
 }
 
-<h2>Enter your login credentials</h2>
-<link href="@Url.Content("~/Content/themes/base/jquery-ui.min.css")" rel="stylesheet" />
-<script src="@Url.Content("~/Scripts/jquery-3.2.1.min.js")"></script>
-<script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+<style>
+    body {
+        background: #333;
+    }
 
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 280px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>
 
     @using(Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <table>
-        <tr>
-            <td>Login Id: </td>
-            <td>@Html.Editor("adminId")</td>
-        </tr>
-        <tr>
-            <td>Password: </td>
-            <td>@Html.TextBox("adminPass", null, new {type = "password" })</td>            
-        </tr>           
-        <tr>
-            <td><input id="submitAdmin" type="submit" value="submit" /></td>
-        </tr>
-        </table>    
-    }
+  <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Admin Login</h2>
+                <br/>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="adminId" id="adminId" placeholder="User id">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="adminPass" id="adminPass" placeholder="Password">
+                </div>
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="submitAdmin">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+           
+}
     
     
 

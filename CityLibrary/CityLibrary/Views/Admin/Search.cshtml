@@ -2,9 +2,31 @@
 @{
     ViewBag.Title = "Search";
 }
+<style>
+    body {
+        background: #333;
+    }
 
-@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
-<h2>Find a document</h2>
+    .form_bg {
+        background-color: #eee;
+        color: #666;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        border: 1px solid #fff;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 320px;
+        height: 330px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+</style>    
 @{
     if (ViewBag.msg != null)
     {
@@ -15,7 +37,31 @@
 }
 @using (Html.BeginForm("Search", "Admin", FormMethod.Post))
 {
-    <table>
+    <div class="container">
+    <div class="row">
+        <div class="form_bg">
+            <form>
+                 <h2 class="text-center">Find a document</h2>
+                <br/>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="docId" id="docId" placeholder="Enter Document id">
+                </div>                                
+                <div class="form-group">
+                    <input type="text" class="form-control" name="libId" id="libId" placeholder="Enter library Id">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="copyno" id="copyno" placeholder="Enter Copy no.">
+                </div>                
+                <br/>
+                <div class="align-center">
+                    <button type="submit" class="btn btn-default" id="btnFind">Find</button>
+                    @Html.ActionLink("Back", "Main", "Admin", new { @class = "btn btn-default" })
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    @*<table>
         <tr>
             <td>Enter Document id: </td>
             <td>@Html.Editor("docId")</td>
@@ -32,5 +78,5 @@
             <td> </td>
             <td><input id="btnFind" type="submit" value="Find" /></td>
         </tr>
-    </table>
+    </table>*@
 }

@@ -2,7 +2,32 @@
     ViewBag.Title = "Most_Popular_Books";
 }
 
-@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+<style>
+    body {
+        background: #333;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+</style>
 <h2>List of top 10 most popular books of the year @ViewBag.year</h2>
 <table border="1">
     <tr>

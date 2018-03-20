@@ -2,8 +2,32 @@
 @{
     ViewBag.Title = "Branch_Information";
 }
+<style>
+    body {
+        background: #333;
+    }
 
-@Html.ActionLink("Return to main Menu for admin", "Main", "Admin")
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+</style>
 <h2>Branch_Information</h2>
 <table border="1">
     <tr>
